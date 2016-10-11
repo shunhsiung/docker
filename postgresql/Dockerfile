@@ -12,7 +12,7 @@ RUN /etc/init.d/postgresql start &&\
 	chmod 0600 ~/.pgpass &&\
 	psql -h localhost -p 5432 -d docker -U docker -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis.sql &&\
 	psql -h localhost -p 5432 -d docker -U docker -f /usr/share/postgresql/9.5/contrib/postgis-2.2/spatial_ref_sys.sql &&\
-	psql -h localhost -p 5432 -d docker -U docker -W -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis_comments.sql
+	psql -h localhost -p 5432 -d docker -U docker -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis_comments.sql
 
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.5/main/pg_hba.conf
 
